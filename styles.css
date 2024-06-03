@@ -1,6 +1,7 @@
 .grid-container {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: 2fr 3fr;
+    grid-template-areas: "title image" "description image";
 }
 
 .grid-item {
@@ -11,35 +12,30 @@
     text-align: center;
 }
 
-.grid-title {    
-    /* force into the top/left */
-    grid-column: 1 / 2;
-    grid-row: 1 / 2;
+.grid-title {
+    /* assign to title area */
+    grid-area: title;
 
-    /* to make pretty */    
-    background-color: #f1f1f1;    
+    /* to make pretty */
+    background-color: #f1f1f1;
 }
 
 .grid-description {
+    /* assign to description area */
+    grid-area: description;
 
-    /* force into the second row just under the title */
-    grid-column: 1 / 2;
-    grid-row: 2 / 3;
-    
-    /* to make pretty */    
-    background-color: #f1f1f1;    
+    /* to make pretty */
+    background-color: #f1f1f1;
 }
 
 .grid-image {
-
     /* center items inside */
     display: grid;
     align-items: center;
 
-    /* force to the second column spanning both rows */
-    grid-column: 2 / 4;
-    grid-row: 1 / 3;
-    
-    /* to make pretty */    
-    background-color: #f1f1f1;    
+    /* assign to image area */
+    grid-area: image;
+
+    /* to make pretty */
+    background-color: #f1f1f1;
 }
